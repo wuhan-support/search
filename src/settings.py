@@ -1,0 +1,8 @@
+BOT_NAME = 'src'
+
+SPIDER_MODULES = ['src.spiders']
+NEWSPIDER_MODULE = 'src.spiders'
+ROBOTSTXT_OBEY = True
+
+LOG_LEVEL = 'ERROR'
+FEED_EXPORT_ENCODING = 'utf-8'
