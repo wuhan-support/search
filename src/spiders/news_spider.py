@@ -68,7 +68,7 @@ class NewsSpider(Spider):
     for a in res.xpath('//ul[@class="ul_title_list"]/li/a'):
       item = NewsItem()
       link = a.xpath('@href').get()
-      item['date'] = link[19:29].replace('/','-')
+      item['date'] = '-'.join(link.rsplit('/',4)[1:4])
       item['src'] = '央视新闻'
       item['link'] = link
       item['title'] = a.xpath('text()').get()
