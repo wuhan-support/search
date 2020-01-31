@@ -64,14 +64,12 @@ class NewsSpider(Spider):
       item['title'] = li.xpath('h3/a/text()').get()
       yield item
 
-  def parseCCTV(self,res: Response):
+  def parseCCTV(self, res: Response):
     for a in res.xpath('//ul[@class="ul_title_list"]/li/a'):
       item = NewsItem()
       link = a.xpath('@href').get()
-      item['date'] = '-'.join(link.rsplit('/',4)[1:4])
+      item['date'] = '-'.join(link.rsplit('/', 4)[1:4])
       item['src'] = '央视新闻'
       item['link'] = link
       item['title'] = a.xpath('text()').get()
       yield item
-
-  
